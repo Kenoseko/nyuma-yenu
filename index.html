@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   
   <!-- SEO & Optimization Meta Tags -->
-  <title>Nyuma Yenu — Life, Lived Fully</title>
+  <title>Nyuma Yenu  Life, Lived Fully</title>
   <meta name="description" content="Nyuma Yenu is a Nairobi-born lifestyle collective. We are the unseen force that makes every celebration, journey, and shared meal extraordinary." />
   <meta name="keywords" content="Nyuma Yenu, Nairobi lifestyle, events, catering, travel, design studio, Kenya" />
   <meta name="author" content="Nyuma Yenu" />
-  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="icon" type="image/jpeg" href="images/favicon.jpg" />
 
   <!-- Open Graph / Social Sharing -->
-  <meta property="og:title" content="Nyuma Yenu — Life, Lived Fully" />
+  <meta property="og:title" content="Nyuma Yenu  Life, Lived Fully" />
   <meta property="og:description" content="A Nairobi-born lifestyle collective creating experiences, spaces, and stories that make people feel fully alive." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nyumayenu.co.ke" />
@@ -515,25 +515,28 @@
       border-radius: 12px;
       overflow: hidden;
       position: relative;
-      aspect-ratio: 4/3;
       cursor: pointer;
+      display: flex;
+      flex-direction: column;
     }
 
     .venture-bg {
-      width: 100%; height: 100%;
+      width: 100%;
       display: flex; align-items: center; justify-content: center;
       font-size: 4rem;
+      padding: 2.5rem 1rem 2rem;
       transition: transform 0.5s ease;
-      position: absolute; inset: 0;
+      flex-shrink: 0;
     }
 
     .venture-card:hover .venture-bg { transform: scale(1.08); }
 
     .venture-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(10,35,15,0.9) 0%, rgba(10,35,15,0.2) 60%, transparent 100%);
-      display: flex; flex-direction: column; justify-content: flex-end;
-      padding: 2rem; transition: all 0.3s;
+      flex: 1;
+      display: flex; flex-direction: column; justify-content: flex-start;
+      padding: 1.2rem 2rem 2rem;
+      background: rgba(10,35,15,0.92);
+      transition: all 0.3s;
     }
 
     .venture-status {
@@ -813,7 +816,7 @@
 <nav>
   <a href="#" class="nav-logo" aria-label="Nyuma Yenu Home">
     <!-- Replaced SVG with Image tag linking to your directory -->
-    <img src="images/logo.jpeg" alt="Nyuma Yenu Logo" class="header-logo" loading="eager" fetchpriority="high" />
+    <img src="images/logo.png" alt="Nyuma Yenu Logo" class="header-logo" loading="eager" fetchpriority="high" />
     <span class="nav-brand">Nyuma Yenu</span>
   </a>
   
@@ -843,7 +846,7 @@
       <em>Moment</em>
     </h1>
     <p class="hero-subtitle">
-      Nyuma Yenu — Swahili for "behind you" — is the unseen force that makes every celebration, every journey, and every shared meal extraordinary.
+      Nyuma Yenu  Swahili for "behind you"  is the unseen force that makes every celebration, every journey, and every shared meal extraordinary.
     </p>
     <div class="hero-btns">
       <a href="#pillars" class="btn-primary">Explore Our World</a>
@@ -908,25 +911,25 @@
   <div class="about-grid">
     <div class="about-left fade-up">
       <div class="section-label">Who We Are</div>
-      <h2>More than a brand —<br/>a <span>way of life</span></h2>
-      <p>Nyuma Yenu is a Nairobi-born lifestyle collective that started as an umbrella for creative and experiential ventures — from catering tables to game nights, from event stages to design studios.</p>
+      <h2>More than a brand <br/>a <span>way of life</span></h2>
+      <p>Nyuma Yenu is a Nairobi-born lifestyle collective that started as an umbrella for creative and experiential ventures  from catering tables to game nights, from event stages to design studios.</p>
       <p>Today, we have simplified our focus to what matters most: joy, movement, good food, and the kind of happiness you feel in your chest. We're the people behind your best memories.</p>
     </div>
     <div class="mv-cards fade-up" style="transition-delay:0.15s">
       <div class="mv-card">
         <div class="mv-card-label">Our Vision</div>
         <h3>A world that chooses joy, daily.</h3>
-        <p>To be East Africa's most loved lifestyle group — the name people think of when they want to live better, laugh louder, and experience more.</p>
+        <p>To be East Africa's most loved lifestyle group  the name people think of when they want to live better, laugh louder, and experience more.</p>
       </div>
       <div class="mv-card">
         <div class="mv-card-label">Our Mission</div>
         <h3>We engineer happiness.</h3>
-        <p>To create experiences, spaces, and stories that make people feel fully alive — through food, travel, play, and genuine human connection.</p>
+        <p>To create experiences, spaces, and stories that make people feel fully alive  through food, travel, play, and genuine human connection.</p>
       </div>
       <div class="mv-card">
         <div class="mv-card-label">Our Promise</div>
         <h3>Behind every great moment, we're there.</h3>
-        <p>Whatever the occasion, whenever you need us, Nyuma Yenu shows up — thoughtful, warm, and completely dedicated to making it unforgettable.</p>
+        <p>Whatever the occasion, whenever you need us, Nyuma Yenu shows up  thoughtful, warm, and completely dedicated to making it unforgettable.</p>
       </div>
     </div>
   </div>
@@ -942,23 +945,19 @@
   <div class="pillars-grid">
     <div class="pillar-card fade-up">
       <span class="pillar-icon" aria-hidden="true">😂</span>
-      <h3>Fun</h3>
-      <p>Life is too short for boring. We find the joy in everything — game nights, spontaneous adventures, and the silliest moments in between.</p>
+      <p>Life is too short for boring. We find the joy in everything  game nights, spontaneous adventures, and the silliest moments in between.</p>
     </div>
     <div class="pillar-card fade-up" style="transition-delay:0.1s">
       <span class="pillar-icon" aria-hidden="true">😊</span>
-      <h3>Happiness</h3>
       <p>We believe happiness is a practice, not a destination. We build environments and experiences that cultivate it intentionally.</p>
     </div>
     <div class="pillar-card fade-up" style="transition-delay:0.2s">
       <span class="pillar-icon" aria-hidden="true">✈️</span>
-      <h3>Travel</h3>
       <p>Every new place is a new perspective. We're always moving, always exploring, and always bringing people along for the ride.</p>
     </div>
     <div class="pillar-card fade-up" style="transition-delay:0.3s">
       <span class="pillar-icon" aria-hidden="true">🍳</span>
-      <h3>Eating Eggs</h3>
-      <p>Scrambled, poached, sunny-side up — eggs are our unofficial mascot. Simple, nourishing, and endlessly versatile. Just like us.</p>
+      <p>Scrambled, poached, sunny-side up  eggs are our unofficial mascot. Simple, nourishing, and endlessly versatile. Just like us.</p>
     </div>
   </div>
 </section>
@@ -968,7 +967,7 @@
   <div class="ventures-header fade-up">
     <div class="section-label">The Collective</div>
     <h2>Our Ventures</h2>
-    <p>We've built across many lanes. Here's the Nyuma Yenu universe — past, present, and always evolving.</p>
+    <p>We've built across many lanes. Here's the Nyuma Yenu universe  past, present, and always evolving.</p>
   </div>
   <div class="ventures-grid">
     <div class="venture-card fade-up">
@@ -995,14 +994,7 @@
         <p>Because grown-ups deserve to play too. Epic, chaotic, unforgettable.</p>
       </div>
     </div>
-    <div class="venture-card fade-up" style="transition-delay:0.1s">
-      <div class="venture-bg" style="background: linear-gradient(135deg, #0f3a1a, #1a5c2a);">✏️</div>
-      <div class="venture-overlay">
-        <div class="venture-status">● In Studio</div>
-        <h3>Graphic Design</h3>
-        <p>Visuals that tell your story with precision and personality.</p>
-      </div>
-    </div>
+
     <div class="venture-card fade-up" style="transition-delay:0.2s">
       <div class="venture-bg" style="background: linear-gradient(135deg, #8b6914, #b8860b);">✈️</div>
       <div class="venture-overlay">
@@ -1090,7 +1082,7 @@
     <div class="now-text fade-up" style="transition-delay:0.2s">
       <div class="section-label">Chapter Now</div>
       <h2>Currently living<br/>for the <em>simple things</em></h2>
-      <p>We've decided that happiness doesn't need a complicated business plan. Right now, Nyuma Yenu is in its most honest season — chasing sun, booking flights, and eating eggs every single morning.</p>
+      <p>We've decided that happiness doesn't need a complicated business plan. Right now, Nyuma Yenu is in its most honest season  chasing sun, booking flights, and eating eggs every single morning.</p>
       <p>It's a vibe. It's a philosophy. It's a reminder that the good life doesn't have to be complicated. You just have to choose it.</p>
       <p>And yes, we really do eat that many eggs.</p>
       <div class="now-tags">
@@ -1177,7 +1169,7 @@
     <div class="contact-left fade-up">
       <div class="section-label">Say Hello</div>
       <h2>Let's make<br/>something <em>great</em><br/>together</h2>
-      <p>Whether you want to work with us, collaborate, book us, or just talk about eggs — our door is always open.</p>
+      <p>Whether you want to work with us, collaborate, book us, or just talk about eggs  our door is always open.</p>
       <div class="contact-info">
         <div class="contact-row">
           <div class="contact-row-icon">📍</div>
@@ -1218,7 +1210,6 @@
           <option>Catering & Events</option>
           <option>Travel Experience</option>
           <option>Game Night</option>
-          <option>Graphic Design</option>
           <option>Collaboration / Partnership</option>
           <option>Just saying hi 👋</option>
           <option>Talking about eggs 🍳</option>
@@ -1294,7 +1285,7 @@
     });
   });
 
-  // 4. Contact Form — Formspree AJAX submit
+  // 4. Contact Form  Formspree AJAX submit
   const contactForm = document.getElementById('contact-form');
   const formStatus = document.getElementById('form-status');
   const formSubmit = document.getElementById('form-submit');

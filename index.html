@@ -16,12 +16,18 @@
   <meta property="og:description" content="A Nairobi-born lifestyle collective creating experiences, spaces, and stories that make people feel fully alive." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nyumayenu.co.ke" />
-  <meta property="og:image" content="images/og-image.jpg" />
+  <meta property="og:image" content="https://nyumayenu.co.ke/images/og-image.png" />
+
+  <!-- SEO -->
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://nyumayenu.co.ke" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet"/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet"/></noscript>
   
   <style>
     :root {
@@ -781,6 +787,24 @@
       .egg-circle::after { width: 290px; height: 290px; }
       .egg-emoji { font-size: 5rem; }
     }
+
+    @media (max-width: 480px) {
+      .hero-title { font-size: clamp(2.6rem, 11vw, 3.2rem); }
+      .hero-btns { flex-direction: column; }
+      .btn-primary, .btn-outline { text-align: center; }
+      .pillars-grid { grid-template-columns: 1fr; }
+      .ventures-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .values-list { grid-template-columns: 1fr; }
+      .office-grid { grid-template-columns: 1fr; }
+      .office-card-1 { grid-column: auto; }
+      .footer-links { flex-wrap: wrap; gap: 1rem; }
+      .now-tags { gap: 0.4rem; }
+      .tag { font-size: 0.72rem; padding: 0.4rem 0.8rem; }
+      .egg-circle { width: 220px; height: 220px; }
+      .egg-circle::after { width: 248px; height: 248px; }
+      .egg-float-1, .egg-float-2, .egg-float-3 { font-size: 0.72rem; padding: 0.5rem 0.9rem; }
+    }
   </style>
 </head>
 <body>
@@ -789,7 +813,7 @@
 <nav>
   <a href="#" class="nav-logo" aria-label="Nyuma Yenu Home">
     <!-- Replaced SVG with Image tag linking to your directory -->
-    <img src="images/logo.png" alt="Nyuma Yenu Logo" class="header-logo" />
+    <img src="images/logo.jpeg" alt="Nyuma Yenu Logo" class="header-logo" loading="eager" fetchpriority="high" />
     <span class="nav-brand">Nyuma Yenu</span>
   </a>
   
@@ -1173,7 +1197,7 @@
         </div>
       </div>
     </div>
-    <form class="contact-form fade-up" style="transition-delay:0.15s" onsubmit="event.preventDefault(); alert('Message sent! We\'ll be in touch soon. 🍳');">
+    <form class="contact-form fade-up" style="transition-delay:0.15s" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
       <div class="form-row">
         <div class="form-group">
           <label for="fname">First Name</label>
@@ -1204,7 +1228,10 @@
         <label for="message">Message</label>
         <textarea id="message" placeholder="Tell us what's on your mind..." required></textarea>
       </div>
-      <button type="submit" class="btn-primary" style="width:100%;padding:1rem;font-size:0.85rem;">Send Message →</button>
+      <input type="hidden" name="_subject" value="New message from Nyuma Yenu website" />
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+      <div id="form-status" style="display:none; padding:1rem; border-radius:6px; font-size:0.88rem; font-weight:500; text-align:center;"></div>
+      <button type="submit" class="btn-primary" id="form-submit" style="width:100%;padding:1rem;font-size:0.85rem;">Send Message →</button>
     </form>
   </div>
 </section>
@@ -1232,23 +1259,22 @@
     entries.forEach(el => {
       if (el.isIntersecting) {
         el.target.classList.add('visible');
+        observer.unobserve(el.target); // stop observing once visible
       }
     });
   }, { threshold: 0.12 });
 
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-  // 2. Nav scroll effect
+  // 2. Nav scroll effect (passive for performance)
+  const nav = document.querySelector('nav');
   window.addEventListener('scroll', () => {
-    const nav = document.querySelector('nav');
-    if (window.scrollY > 60) {
-      nav.style.boxShadow = '0 4px 24px rgba(0,0,0,0.08)';
-    } else {
-      nav.style.boxShadow = 'none';
-    }
-  });
+    nav.style.boxShadow = window.scrollY > 60
+      ? '0 4px 24px rgba(0,0,0,0.08)'
+      : 'none';
+  }, { passive: true });
 
-  // 3. Mobile Navigation Toggle Logic
+  // 3. Mobile Navigation Toggle
   const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
   const navLinks = document.querySelector('.nav-links');
   const navItems = document.querySelectorAll('.nav-links a');
@@ -1256,13 +1282,10 @@
   mobileMenuBtn.addEventListener('click', () => {
     mobileMenuBtn.classList.toggle('active');
     navLinks.classList.toggle('active');
-    
-    // Accessibility toggle
     const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
     mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
   });
 
-  // Close mobile menu when a link is clicked
   navItems.forEach(item => {
     item.addEventListener('click', () => {
       mobileMenuBtn.classList.remove('active');
@@ -1270,6 +1293,48 @@
       mobileMenuBtn.setAttribute('aria-expanded', 'false');
     });
   });
+
+  // 4. Contact Form — Formspree AJAX submit
+  const contactForm = document.getElementById('contact-form');
+  const formStatus = document.getElementById('form-status');
+  const formSubmit = document.getElementById('form-submit');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      formSubmit.disabled = true;
+      formSubmit.textContent = 'Sending…';
+
+      try {
+        const data = new FormData(contactForm);
+        const res = await fetch(contactForm.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          formStatus.style.display = 'block';
+          formStatus.style.background = 'rgba(26,92,42,0.08)';
+          formStatus.style.color = 'var(--green)';
+          formStatus.style.border = '1px solid rgba(26,92,42,0.2)';
+          formStatus.textContent = "Message sent! We'll be in touch soon. 🍳";
+          contactForm.reset();
+        } else {
+          throw new Error('Server error');
+        }
+      } catch {
+        formStatus.style.display = 'block';
+        formStatus.style.background = 'rgba(180,50,30,0.07)';
+        formStatus.style.color = '#b43220';
+        formStatus.style.border = '1px solid rgba(180,50,30,0.2)';
+        formStatus.textContent = 'Something went wrong. Please email us directly at hello@nyumayenu.co.ke';
+      } finally {
+        formSubmit.disabled = false;
+        formSubmit.textContent = 'Send Message →';
+      }
+    });
+  }
 </script>
 </body>
 </html>

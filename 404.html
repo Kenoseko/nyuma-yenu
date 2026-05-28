@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Page Not Found — Nyuma Yenu</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #0f3a1a;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      -webkit-font-smoothing: antialiased;
+    }
+    .eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #d4a017;
+      margin-bottom: 1.5rem;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 10vw, 6rem);
+      font-weight: 700;
+      line-height: 1.05;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    h1 em { font-style: italic; color: #d4a017; }
+    p {
+      color: rgba(255,255,255,0.55);
+      font-size: 1rem;
+      line-height: 1.7;
+      max-width: 400px;
+      margin-bottom: 2.5rem;
+    }
+    a {
+      display: inline-block;
+      background: #b8860b;
+      color: #fff;
+      padding: 0.9rem 2.2rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.3s, transform 0.3s;
+    }
+    a:hover { background: #d4a017; transform: translateY(-2px); }
+    .egg { font-size: 4rem; margin-bottom: 1.5rem; animation: float 3s ease-in-out infinite; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="egg">🍳</div>
+  <div class="eyebrow">404 — Lost in the sauce</div>
+  <h1>This page<br/>went <em>travelling</em></h1>
+  <p>Looks like this page is off exploring somewhere. Let's get you back to the good stuff.</p>
+  <a href="/">Take Me Home →</a>
+</body>
+</html>

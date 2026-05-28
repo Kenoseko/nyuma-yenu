@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <!-- SEO & Optimization Meta Tags -->
+  <title>Nyuma Yenu — Life, Lived Fully</title>
+  <meta name="description" content="Nyuma Yenu is a Nairobi-born lifestyle collective. We are the unseen force that makes every celebration, journey, and shared meal extraordinary." />
+  <meta name="keywords" content="Nyuma Yenu, Nairobi lifestyle, events, catering, travel, design studio, Kenya" />
+  <meta name="author" content="Nyuma Yenu" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:title" content="Nyuma Yenu — Life, Lived Fully" />
+  <meta property="og:description" content="A Nairobi-born lifestyle collective creating experiences, spaces, and stories that make people feel fully alive." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nyumayenu.co.ke" />
+  <meta property="og:image" content="images/og-image.jpg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet"/>
+  
+  <style>
+    :root {
+      --green: #1a5c2a;
+      --green-deep: #0f3a1a;
+      --green-light: #2a7a3a;
+      --gold: #b8860b;
+      --gold-light: #d4a017;
+      --gold-pale: #f5e6b8;
+      --cream: #faf7f0;
+      --dark: #111810;
+      --text: #2a2a2a;
+      --muted: #6b6b5a;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 4rem;
+      background: rgba(250,247,240,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(184,134,11,0.15);
+      transition: all 0.3s ease;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      z-index: 101;
+    }
+
+    /* Updated Logo Styling */
+    .header-logo {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .nav-brand {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--green);
+      letter-spacing: 0.04em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0;
+      width: 0; height: 1.5px;
+      background: var(--gold);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover { color: var(--green); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      background: var(--green);
+      color: #fff !important;
+      padding: 0.55rem 1.4rem;
+      border-radius: 2px;
+      letter-spacing: 0.1em;
+      font-size: 0.78rem !important;
+      transition: background 0.3s !important;
+    }
+
+    .nav-cta:hover { background: var(--gold) !important; color: #fff !important; }
+    .nav-cta::after { display: none !important; }
+
+    /* Mobile Menu Button */
+    .mobile-menu-btn {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      z-index: 101;
+      padding: 0.5rem;
+    }
+
+    .mobile-menu-btn span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: var(--green);
+      transition: all 0.3s ease;
+    }
+
+    .mobile-menu-btn.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .mobile-menu-btn.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .mobile-menu-btn.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      background: var(--green-deep);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-texture {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(ellipse 80% 60% at 70% 50%, rgba(184,134,11,0.12) 0%, transparent 70%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 10rem 4rem 6rem 4rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 32px; height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.2rem, 5vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      color: #fff;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+      max-width: 420px;
+      margin-bottom: 3rem;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #fff;
+      padding: 0.9rem 2.2rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.3s;
+      border: none; cursor: pointer;
+    }
+
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(184,134,11,0.35); }
+
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      padding: 0.9rem 2.2rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      border: 1px solid rgba(255,255,255,0.35);
+      transition: all 0.3s;
+    }
+
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    .hero-right {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 6rem 3rem 0;
+      overflow: hidden;
+    }
+
+    .office-mockup {
+      width: 100%;
+      max-width: 520px;
+      position: relative;
+      animation: floatUp 1.2s ease-out forwards;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    @keyframes floatUp { to { opacity: 1; transform: translateY(0); } }
+
+    .hero-scroll-indicator {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      z-index: 3;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ─── REUSABLE ─── */
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+
+    /* ─── ABOUT / MISSION / VISION ─── */
+    #about {
+      background: var(--cream);
+      padding: 8rem 4rem;
+      position: relative;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .about-left h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 3.5vw, 3.4rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--green-deep);
+      margin-bottom: 1.8rem;
+    }
+
+    .about-left h2 span { color: var(--gold); font-style: italic; }
+
+    .about-left p {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .mv-cards { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    .mv-card {
+      background: #fff;
+      border-left: 3px solid var(--gold);
+      padding: 1.8rem 2rem;
+      border-radius: 0 8px 8px 0;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .mv-card:hover { transform: translateX(4px); box-shadow: 0 8px 32px rgba(0,0,0,0.09); }
+
+    .mv-card-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+      font-weight: 500;
+    }
+
+    .mv-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--green-deep);
+      margin-bottom: 0.5rem;
+    }
+
+    .mv-card p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    /* ─── PILLARS ─── */
+    #pillars {
+      background: var(--green-deep);
+      padding: 8rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #pillars::before {
+      content: '';
+      position: absolute;
+      top: -50%; right: -20%;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(184,134,11,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .pillars-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 5rem;
+    }
+
+    .pillars-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .pillars-header p {
+      color: rgba(255,255,255,0.55);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      line-height: 1.7;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .pillar-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pillar-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+
+    .pillar-card:hover {
+      background: rgba(255,255,255,0.08);
+      transform: translateY(-6px);
+      border-color: rgba(184,134,11,0.3);
+    }
+
+    .pillar-card:hover::before { transform: scaleX(1); }
+
+    .pillar-icon { font-size: 2.8rem; margin-bottom: 1.2rem; display: block; }
+
+    .pillar-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.8rem;
+    }
+
+    .pillar-card p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.65;
+    }
+
+    /* ─── VENTURES ─── */
+    #ventures { background: #fff; padding: 8rem 4rem; }
+
+    .ventures-header { text-align: center; max-width: 600px; margin: 0 auto 4.5rem; }
+
+    .ventures-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 700;
+      color: var(--green-deep);
+      margin-bottom: 1rem;
+    }
+
+    .ventures-header p { color: var(--muted); font-size: 0.95rem; line-height: 1.7; }
+
+    .ventures-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .venture-card {
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 4/3;
+      cursor: pointer;
+    }
+
+    .venture-bg {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 4rem;
+      transition: transform 0.5s ease;
+      position: absolute; inset: 0;
+    }
+
+    .venture-card:hover .venture-bg { transform: scale(1.08); }
+
+    .venture-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(10,35,15,0.9) 0%, rgba(10,35,15,0.2) 60%, transparent 100%);
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 2rem; transition: all 0.3s;
+    }
+
+    .venture-status {
+      font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.4rem; font-weight: 500;
+    }
+
+    .venture-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 0.4rem;
+    }
+
+    .venture-card p {
+      font-size: 0.82rem; color: rgba(255,255,255,0.65); line-height: 1.5;
+    }
+
+    /* ─── VALUES STRIP ─── */
+    #values { background: var(--gold-pale); padding: 5rem 4rem; overflow: hidden; }
+
+    .values-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; align-items: center;
+    }
+
+    .values-title h2 {
+      font-family: 'Playfair Display', serif; font-size: 2.5rem;
+      font-weight: 900; color: var(--green-deep); line-height: 1.15;
+    }
+    .values-title h2 em { color: var(--gold); font-style: italic; }
+
+    .values-list { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+    .value-item { display: flex; gap: 1rem; align-items: flex-start; }
+    .value-num {
+      font-family: 'Playfair Display', serif; font-size: 2rem;
+      font-weight: 900; color: rgba(26,92,42,0.15); line-height: 1; min-width: 2.5rem;
+    }
+
+    .value-item h4 {
+      font-size: 0.9rem; font-weight: 700; color: var(--green-deep);
+      margin-bottom: 0.3rem; text-transform: uppercase; letter-spacing: 0.06em;
+    }
+    .value-item p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
+    /* ─── EGGS / NOW SECTION ─── */
+    #now { background: var(--cream); padding: 8rem 4rem; }
+
+    .now-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;
+    }
+
+    .egg-visual {
+      position: relative; aspect-ratio: 1;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .egg-circle {
+      width: 380px; height: 380px; border-radius: 50%;
+      background: var(--green); display: flex; align-items: center; justify-content: center;
+      position: relative; box-shadow: 0 24px 80px rgba(26,92,42,0.3);
+    }
+
+    .egg-circle::after {
+      content: ''; position: absolute; width: 420px; height: 420px;
+      border-radius: 50%; border: 1px solid rgba(26,92,42,0.2);
+      animation: pulseRing 3s ease-in-out infinite;
+    }
+
+    @keyframes pulseRing {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.05); opacity: 0.5; }
+    }
+
+    .egg-emoji { font-size: 8rem; }
+
+    .egg-float-1, .egg-float-2, .egg-float-3 {
+      position: absolute; background: #fff; border-radius: 50px;
+      padding: 0.6rem 1.2rem; font-size: 0.8rem; font-weight: 500;
+      color: var(--green-deep); box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      white-space: nowrap; animation: floatBadge 4s ease-in-out infinite;
+    }
+
+    .egg-float-1 { top: 8%; right: 0; animation-delay: 0s; }
+    .egg-float-2 { bottom: 20%; left: -5%; animation-delay: 1.3s; }
+    .egg-float-3 { bottom: 5%; right: 5%; animation-delay: 2.6s; }
+
+    @keyframes floatBadge {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .now-text h2 {
+      font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3vw, 3.2rem);
+      font-weight: 700; color: var(--green-deep); line-height: 1.2; margin-bottom: 1.5rem;
+    }
+    .now-text h2 em { color: var(--gold); font-style: italic; }
+    .now-text p { font-size: 1rem; line-height: 1.85; color: var(--muted); margin-bottom: 1rem; }
+
+    .now-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2rem; }
+    .tag {
+      background: var(--green); color: #fff; padding: 0.45rem 1rem;
+      border-radius: 100px; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.04em;
+    }
+    .tag.gold { background: var(--gold); }
+
+    /* ─── OFFICE SECTION ─── */
+    #office { background: var(--green-deep); padding: 8rem 4rem; }
+
+    .office-header { text-align: center; max-width: 600px; margin: 0 auto 5rem; }
+    .office-header h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3vw, 3rem); color: #fff; margin-bottom: 1rem; }
+    .office-header p { color: rgba(255,255,255,0.5); font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; line-height: 1.7; }
+
+    .office-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: auto auto;
+      gap: 1.5rem; max-width: 1200px; margin: 0 auto;
+    }
+
+    .office-card {
+      border-radius: 16px; overflow: hidden; position: relative;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+      min-height: 220px; display: flex; align-items: flex-end; padding: 2rem;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .office-card:hover { transform: translateY(-4px); border-color: rgba(184,134,11,0.4); }
+    .office-card-1 { grid-row: 1 / 3; min-height: 460px; }
+    .office-card-inner { position: relative; z-index: 2; }
+    .office-card-inner h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #fff; margin-bottom: 0.4rem; }
+    .office-card-inner p { font-size: 0.82rem; color: rgba(255,255,255,0.5); }
+    .office-card-bg {
+      position: absolute; inset: 0; display: flex; align-items: center;
+      justify-content: center; font-size: 6rem; opacity: 0.12;
+    }
+
+    /* ─── CONTACT ─── */
+    #contact { background: var(--cream); padding: 8rem 4rem; }
+
+    .contact-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start;
+    }
+
+    .contact-left h2 {
+      font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 3vw, 3.2rem);
+      font-weight: 700; color: var(--green-deep); line-height: 1.2; margin-bottom: 1.5rem;
+    }
+    .contact-left h2 em { color: var(--gold); font-style: italic; }
+    .contact-left p { font-size: 1rem; line-height: 1.8; color: var(--muted); margin-bottom: 2rem; }
+
+    .contact-info { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-row { display: flex; align-items: center; gap: 1rem; }
+    .contact-row-icon {
+      width: 42px; height: 42px; background: var(--green); border-radius: 8px;
+      display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;
+    }
+    .contact-row-text { font-size: 0.9rem; color: var(--text); font-weight: 500; }
+
+    .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group label {
+      font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+      font-weight: 500; color: var(--green-deep);
+    }
+    .form-group input, .form-group textarea, .form-group select {
+      background: #fff; border: 1.5px solid rgba(26,92,42,0.15); border-radius: 6px;
+      padding: 0.85rem 1rem; font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+      color: var(--text); transition: border-color 0.3s; outline: none; resize: none;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--green); }
+    .form-group textarea { min-height: 120px; }
+
+    /* ─── FOOTER ─── */
+    footer { background: var(--dark); padding: 4rem; }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto; display: flex; align-items: center;
+      justify-content: space-between; gap: 2rem; flex-wrap: wrap;
+    }
+    .footer-brand { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: #fff; }
+    .footer-tagline { font-size: 0.8rem; color: rgba(255,255,255,0.35); margin-top: 0.3rem; letter-spacing: 0.08em; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a {
+      font-size: 0.8rem; color: rgba(255,255,255,0.4); text-decoration: none;
+      letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.3s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-copy {
+      width: 100%; text-align: center; margin-top: 2rem; padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.06); font-size: 0.75rem;
+      color: rgba(255,255,255,0.2); letter-spacing: 0.08em;
+    }
+
+    /* ─── ANIMATIONS ─── */
+    .fade-up {
+      opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: none; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      
+      /* Mobile Menu Styles */
+      .mobile-menu-btn { display: flex; }
+      
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(250,247,240,0.98);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+        border-bottom: 1px solid rgba(184,134,11,0.15);
+        box-shadow: 0 10px 24px rgba(0,0,0,0.05);
+        
+        /* Hidden by default on mobile */
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+        transition: all 0.3s ease;
+      }
+      
+      .nav-links.active {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+
+      .nav-links a { font-size: 1rem; }
+
+      #hero { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .hero-left { padding: 8rem 2rem 5rem; }
+      #about, #ventures, #now, #office, #contact { padding: 5rem 1.5rem; }
+      .about-grid, .now-inner, .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .pillars-grid { grid-template-columns: 1fr 1fr; }
+      .ventures-grid { grid-template-columns: 1fr 1fr; }
+      .office-grid { grid-template-columns: 1fr 1fr; }
+      .office-card-1 { grid-column: 1 / -1; }
+      .values-inner { grid-template-columns: 1fr; gap: 2rem; }
+      #values { padding: 4rem 1.5rem; }
+      #pillars { padding: 5rem 1.5rem; }
+      footer { padding: 3rem 1.5rem; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+      .egg-circle { width: 260px; height: 260px; }
+      .egg-circle::after { width: 290px; height: 290px; }
+      .egg-emoji { font-size: 5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo" aria-label="Nyuma Yenu Home">
+    <!-- Replaced SVG with Image tag linking to your directory -->
+    <img src="images/logo.png" alt="Nyuma Yenu Logo" class="header-logo" />
+    <span class="nav-brand">Nyuma Yenu</span>
+  </a>
+  
+  <div class="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#pillars">What We Do</a></li>
+    <li><a href="#ventures">Ventures</a></li>
+    <li><a href="#now">Right Now</a></li>
+    <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-texture"></div>
+  <div class="hero-left">
+    <div class="hero-eyebrow">Life at its fullest</div>
+    <h1 class="hero-title">
+      Behind<br/>
+      Every Great<br/>
+      <em>Moment</em>
+    </h1>
+    <p class="hero-subtitle">
+      Nyuma Yenu — Swahili for "behind you" — is the unseen force that makes every celebration, every journey, and every shared meal extraordinary.
+    </p>
+    <div class="hero-btns">
+      <a href="#pillars" class="btn-primary">Explore Our World</a>
+      <a href="#contact" class="btn-outline">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <!-- Office Mockup SVG -->
+    <svg class="office-mockup" viewBox="0 0 520 480" xmlns="http://www.w3.org/2000/svg" fill="none" style="animation-delay:0.3s">
+      <!-- Floor -->
+      <ellipse cx="260" cy="430" rx="220" ry="30" fill="rgba(255,255,255,0.05)"/>
+      <!-- Back wall -->
+      <rect x="40" y="60" width="440" height="340" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+      <!-- Window -->
+      <rect x="80" y="90" width="140" height="180" rx="4" fill="rgba(184,134,11,0.15)" stroke="rgba(184,134,11,0.3)" stroke-width="1.5"/>
+      <line x1="80" y1="180" x2="220" y2="180" stroke="rgba(184,134,11,0.3)" stroke-width="1"/>
+      <line x1="150" y1="90" x2="150" y2="270" stroke="rgba(184,134,11,0.3)" stroke-width="1"/>
+      <!-- Plant -->
+      <rect x="200" y="330" width="16" height="50" rx="3" fill="rgba(26,92,42,0.6)"/>
+      <ellipse cx="208" cy="320" rx="28" ry="22" fill="#1a5c2a" opacity="0.7"/>
+      <ellipse cx="220" cy="310" rx="18" ry="14" fill="#2a7a3a" opacity="0.8"/>
+      <ellipse cx="196" cy="308" rx="16" ry="12" fill="#1a5c2a" opacity="0.9"/>
+      <!-- Desk -->
+      <rect x="240" y="280" width="220" height="12" rx="4" fill="rgba(255,255,255,0.15)"/>
+      <rect x="250" y="292" width="8" height="80" rx="2" fill="rgba(255,255,255,0.08)"/>
+      <rect x="444" y="292" width="8" height="80" rx="2" fill="rgba(255,255,255,0.08)"/>
+      <!-- Monitor -->
+      <rect x="290" y="200" width="120" height="80" rx="5" fill="rgba(26,92,42,0.8)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+      <rect x="296" y="206" width="108" height="62" rx="3" fill="rgba(255,255,255,0.06)"/>
+      <!-- NY logo on screen -->
+      <text x="350" y="246" text-anchor="middle" font-size="22" fill="rgba(184,134,11,0.7)" font-family="serif" font-weight="900">NY</text>
+      <rect x="336" y="280" width="28" height="6" rx="1" fill="rgba(255,255,255,0.1)"/>
+      <!-- Laptop -->
+      <rect x="300" y="275" width="90" height="6" rx="2" fill="rgba(255,255,255,0.12)"/>
+      <path d="M300 275 L290 258 L390 258 L390 275 Z" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+      <!-- Coffee cup -->
+      <rect x="440" y="258" width="18" height="22" rx="3" fill="rgba(184,134,11,0.6)"/>
+      <path d="M458 265 Q466 265 466 272 Q466 278 458 278" stroke="rgba(184,134,11,0.4)" stroke-width="1.5" fill="none"/>
+      <!-- Chair -->
+      <ellipse cx="350" cy="365" rx="45" ry="10" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.1)"/>
+      <rect x="340" y="355" width="20" height="50" rx="2" fill="rgba(255,255,255,0.05)"/>
+      <!-- Wall art / brand board -->
+      <rect x="300" y="90" width="160" height="100" rx="6" fill="rgba(184,134,11,0.08)" stroke="rgba(184,134,11,0.2)" stroke-width="1"/>
+      <text x="380" y="140" text-anchor="middle" font-family="serif" font-size="11" fill="rgba(184,134,11,0.5)" font-style="italic">NYUMA YENU</text>
+      <text x="380" y="156" text-anchor="middle" font-family="sans-serif" font-size="8" fill="rgba(255,255,255,0.25)" letter-spacing="3">LIFE LIVED FULLY</text>
+      <!-- Floating tag 1 -->
+      <rect x="50" y="300" width="130" height="36" rx="18" fill="rgba(184,134,11,0.9)"/>
+      <text x="115" y="323" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#fff" font-weight="600">🍳 Eggs for days</text>
+      <!-- Floating tag 2 -->
+      <rect x="380" y="100" width="110" height="36" rx="18" fill="rgba(255,255,255,0.9)"/>
+      <text x="435" y="123" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#1a5c2a" font-weight="600">✈️ Always moving</text>
+    </svg>
+  </div>
+  <div class="hero-scroll-indicator">
+    <span>Scroll</span>
+    <svg width="16" height="24" viewBox="0 0 16 24" fill="none"><rect x="6" y="0" width="4" height="12" rx="2" fill="currentColor" opacity="0.5"/><path d="M0 16 L8 24 L16 16" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.5"/></svg>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-left fade-up">
+      <div class="section-label">Who We Are</div>
+      <h2>More than a brand —<br/>a <span>way of life</span></h2>
+      <p>Nyuma Yenu is a Nairobi-born lifestyle collective that started as an umbrella for creative and experiential ventures — from catering tables to game nights, from event stages to design studios.</p>
+      <p>Today, we have simplified our focus to what matters most: joy, movement, good food, and the kind of happiness you feel in your chest. We're the people behind your best memories.</p>
+    </div>
+    <div class="mv-cards fade-up" style="transition-delay:0.15s">
+      <div class="mv-card">
+        <div class="mv-card-label">Our Vision</div>
+        <h3>A world that chooses joy, daily.</h3>
+        <p>To be East Africa's most loved lifestyle group — the name people think of when they want to live better, laugh louder, and experience more.</p>
+      </div>
+      <div class="mv-card">
+        <div class="mv-card-label">Our Mission</div>
+        <h3>We engineer happiness.</h3>
+        <p>To create experiences, spaces, and stories that make people feel fully alive — through food, travel, play, and genuine human connection.</p>
+      </div>
+      <div class="mv-card">
+        <div class="mv-card-label">Our Promise</div>
+        <h3>Behind every great moment, we're there.</h3>
+        <p>Whatever the occasion, whenever you need us, Nyuma Yenu shows up — thoughtful, warm, and completely dedicated to making it unforgettable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section id="pillars">
+  <div class="pillars-header fade-up">
+    <div class="section-label" style="color:var(--gold-light)">The Four Pillars</div>
+    <h2>What We're About<br/>Right Now</h2>
+    <p>We've stripped it back to the essentials of a good life. Four things that light us up every single day.</p>
+  </div>
+  <div class="pillars-grid">
+    <div class="pillar-card fade-up">
+      <span class="pillar-icon" aria-hidden="true">😂</span>
+      <h3>Fun</h3>
+      <p>Life is too short for boring. We find the joy in everything — game nights, spontaneous adventures, and the silliest moments in between.</p>
+    </div>
+    <div class="pillar-card fade-up" style="transition-delay:0.1s">
+      <span class="pillar-icon" aria-hidden="true">😊</span>
+      <h3>Happiness</h3>
+      <p>We believe happiness is a practice, not a destination. We build environments and experiences that cultivate it intentionally.</p>
+    </div>
+    <div class="pillar-card fade-up" style="transition-delay:0.2s">
+      <span class="pillar-icon" aria-hidden="true">✈️</span>
+      <h3>Travel</h3>
+      <p>Every new place is a new perspective. We're always moving, always exploring, and always bringing people along for the ride.</p>
+    </div>
+    <div class="pillar-card fade-up" style="transition-delay:0.3s">
+      <span class="pillar-icon" aria-hidden="true">🍳</span>
+      <h3>Eating Eggs</h3>
+      <p>Scrambled, poached, sunny-side up — eggs are our unofficial mascot. Simple, nourishing, and endlessly versatile. Just like us.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VENTURES -->
+<section id="ventures">
+  <div class="ventures-header fade-up">
+    <div class="section-label">The Collective</div>
+    <h2>Our Ventures</h2>
+    <p>We've built across many lanes. Here's the Nyuma Yenu universe — past, present, and always evolving.</p>
+  </div>
+  <div class="ventures-grid">
+    <div class="venture-card fade-up">
+      <div class="venture-bg" style="background: linear-gradient(135deg, #1a5c2a, #2a7a3a);">🍽️</div>
+      <div class="venture-overlay">
+        <div class="venture-status">● Active</div>
+        <h3>Catering</h3>
+        <p>From intimate dinners to full-scale events. Real food, real love.</p>
+      </div>
+    </div>
+    <div class="venture-card fade-up" style="transition-delay:0.1s">
+      <div class="venture-bg" style="background: linear-gradient(135deg, #b8860b, #d4a017);">🎉</div>
+      <div class="venture-overlay">
+        <div class="venture-status">● Active</div>
+        <h3>Events</h3>
+        <p>Experiences that live rent-free in your memory forever.</p>
+      </div>
+    </div>
+    <div class="venture-card fade-up" style="transition-delay:0.2s">
+      <div class="venture-bg" style="background: linear-gradient(135deg, #2d3a2d, #4a6040);">🎮</div>
+      <div class="venture-overlay">
+        <div class="venture-status">● Coming Back</div>
+        <h3>Game Nights</h3>
+        <p>Because grown-ups deserve to play too. Epic, chaotic, unforgettable.</p>
+      </div>
+    </div>
+    <div class="venture-card fade-up" style="transition-delay:0.1s">
+      <div class="venture-bg" style="background: linear-gradient(135deg, #0f3a1a, #1a5c2a);">✏️</div>
+      <div class="venture-overlay">
+        <div class="venture-status">● In Studio</div>
+        <h3>Graphic Design</h3>
+        <p>Visuals that tell your story with precision and personality.</p>
+      </div>
+    </div>
+    <div class="venture-card fade-up" style="transition-delay:0.2s">
+      <div class="venture-bg" style="background: linear-gradient(135deg, #8b6914, #b8860b);">✈️</div>
+      <div class="venture-overlay">
+        <div class="venture-status">● Our Passion</div>
+        <h3>Travel Experiences</h3>
+        <p>Curated getaways with the Nyuma Yenu spirit. Go somewhere new.</p>
+      </div>
+    </div>
+    <div class="venture-card fade-up" style="transition-delay:0.3s">
+      <div class="venture-bg" style="background: linear-gradient(135deg, #1a3a1a, #2a5c2a);">🍳</div>
+      <div class="venture-overlay">
+        <div class="venture-status">● Our Current Obsession</div>
+        <h3>The Egg Life</h3>
+        <p>Seriously though. Eggs are a lifestyle. Ask us about it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section id="values">
+  <div class="values-inner">
+    <div class="values-title fade-up">
+      <div class="section-label">Core Values</div>
+      <h2>What we<br/>stand<br/><em>for</em></h2>
+    </div>
+    <div class="values-list">
+      <div class="value-item fade-up">
+        <div class="value-num">01</div>
+        <div>
+          <h4>Joy First</h4>
+          <p>Every decision we make is filtered through one question: does this bring more joy?</p>
+        </div>
+      </div>
+      <div class="value-item fade-up" style="transition-delay:0.1s">
+        <div class="value-num">02</div>
+        <div>
+          <h4>Warmth</h4>
+          <p>We are a welcoming, human, generous presence in everything we do.</p>
+        </div>
+      </div>
+      <div class="value-item fade-up" style="transition-delay:0.15s">
+        <div class="value-num">03</div>
+        <div>
+          <h4>Curiosity</h4>
+          <p>We stay interested. New places, new recipes, new ways to make people smile.</p>
+        </div>
+      </div>
+      <div class="value-item fade-up" style="transition-delay:0.2s">
+        <div class="value-num">04</div>
+        <div>
+          <h4>Togetherness</h4>
+          <p>The best experiences are always better shared. We build for community.</p>
+        </div>
+      </div>
+      <div class="value-item fade-up" style="transition-delay:0.25s">
+        <div class="value-num">05</div>
+        <div>
+          <h4>Boldness</h4>
+          <p>We try the thing. We go the place. We order the extra eggs.</p>
+        </div>
+      </div>
+      <div class="value-item fade-up" style="transition-delay:0.3s">
+        <div class="value-num">06</div>
+        <div>
+          <h4>Nairobi Soul</h4>
+          <p>Proudly rooted in East Africa. Our energy, our flavour, our story.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOW (Eggs / Current Focus) -->
+<section id="now">
+  <div class="now-inner">
+    <div class="egg-visual fade-up">
+      <div class="egg-circle">
+        <span class="egg-emoji" aria-hidden="true">🍳</span>
+      </div>
+      <div class="egg-float-1">✈️ Weekend trip incoming</div>
+      <div class="egg-float-2">😂 Always laughing</div>
+      <div class="egg-float-3">🍳 Eggs, always eggs</div>
+    </div>
+    <div class="now-text fade-up" style="transition-delay:0.2s">
+      <div class="section-label">Chapter Now</div>
+      <h2>Currently living<br/>for the <em>simple things</em></h2>
+      <p>We've decided that happiness doesn't need a complicated business plan. Right now, Nyuma Yenu is in its most honest season — chasing sun, booking flights, and eating eggs every single morning.</p>
+      <p>It's a vibe. It's a philosophy. It's a reminder that the good life doesn't have to be complicated. You just have to choose it.</p>
+      <p>And yes, we really do eat that many eggs.</p>
+      <div class="now-tags">
+        <span class="tag">🍳 Egg enthusiasts</span>
+        <span class="tag gold">✈️ Always travelling</span>
+        <span class="tag">😊 Joy seekers</span>
+        <span class="tag gold">🎉 Fun makers</span>
+        <span class="tag">🌍 Nairobi proud</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFICE MOCKUP -->
+<section id="office">
+  <div class="office-header fade-up">
+    <div class="section-label" style="color:var(--gold-light)">The Space</div>
+    <h2>Where the Magic Happens</h2>
+    <p>A creative home where ideas are hatched (usually over eggs), trips are planned, and the next great experience is always in the works.</p>
+  </div>
+  <div class="office-grid">
+    <div class="office-card office-card-1 fade-up">
+      <div class="office-card-bg">🏢</div>
+      <svg width="100%" height="100%" style="position:absolute;inset:0;opacity:0.25" viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg">
+        <rect x="20" y="40" width="360" height="300" rx="6" stroke="rgba(255,255,255,0.3)" fill="none" stroke-width="1"/>
+        <rect x="30" y="55" width="120" height="160" rx="3" fill="rgba(184,134,11,0.2)" stroke="rgba(184,134,11,0.4)" stroke-width="1"/>
+        <line x1="30" y1="135" x2="150" y2="135" stroke="rgba(184,134,11,0.3)" stroke-width="1"/>
+        <line x1="90" y1="55" x2="90" y2="215" stroke="rgba(184,134,11,0.3)" stroke-width="1"/>
+        <rect x="165" y="55" width="200" height="80" rx="3" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)"/>
+        <text x="265" y="100" text-anchor="middle" font-family="serif" font-size="14" fill="rgba(184,134,11,0.6)" font-style="italic">Nyuma Yenu HQ</text>
+        <rect x="20" y="310" width="360" height="10" rx="3" fill="rgba(255,255,255,0.1)"/>
+        <rect x="40" y="320" width="8" height="80" fill="rgba(255,255,255,0.07)"/>
+        <rect x="352" y="320" width="8" height="80" fill="rgba(255,255,255,0.07)"/>
+        <rect x="100" y="250" width="90" height="60" rx="4" fill="rgba(26,92,42,0.6)" stroke="rgba(255,255,255,0.1)"/>
+        <rect x="106" y="256" width="78" height="44" rx="2" fill="rgba(255,255,255,0.05)"/>
+        <text x="145" y="283" text-anchor="middle" font-size="18" fill="rgba(184,134,11,0.5)" font-family="serif">NY</text>
+        <rect x="220" y="270" width="120" height="8" rx="2" fill="rgba(255,255,255,0.1)"/>
+        <rect x="220" y="258" width="120" height="12" rx="2" fill="rgba(255,255,255,0.07)"/>
+        <path d="M220 310 L200 258 L340 258 L340 310Z" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)"/>
+        <ellipse cx="170" cy="380" rx="16" ry="4" fill="rgba(26,92,42,0.4)"/>
+        <rect x="164" y="330" width="12" height="52" rx="3" fill="rgba(26,92,42,0.5)"/>
+        <ellipse cx="170" cy="320" rx="22" ry="18" fill="#1a5c2a" opacity="0.6"/>
+        <ellipse cx="180" cy="312" rx="14" ry="11" fill="#2a7a3a" opacity="0.7"/>
+      </svg>
+      <div class="office-card-inner">
+        <h3>The Creative Studio</h3>
+        <p>Where ideas, designs, and big plans come together</p>
+      </div>
+    </div>
+    <div class="office-card fade-up" style="transition-delay:0.1s">
+      <div class="office-card-bg">☕</div>
+      <div class="office-card-inner">
+        <h3>The Kitchen Corner</h3>
+        <p>Egg station. Always stocked.</p>
+      </div>
+    </div>
+    <div class="office-card fade-up" style="transition-delay:0.15s">
+      <div class="office-card-bg">🗺️</div>
+      <div class="office-card-inner">
+        <h3>The Planning Wall</h3>
+        <p>Next destinations, pinned and ready</p>
+      </div>
+    </div>
+    <div class="office-card fade-up" style="transition-delay:0.2s">
+      <div class="office-card-bg">🎮</div>
+      <div class="office-card-inner">
+        <h3>Game Room</h3>
+        <p>Research. Definitely research.</p>
+      </div>
+    </div>
+    <div class="office-card fade-up" style="transition-delay:0.25s">
+      <div class="office-card-bg">🌿</div>
+      <div class="office-card-inner">
+        <h3>The Lounge</h3>
+        <p>Where deals are made over good vibes</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-left fade-up">
+      <div class="section-label">Say Hello</div>
+      <h2>Let's make<br/>something <em>great</em><br/>together</h2>
+      <p>Whether you want to work with us, collaborate, book us, or just talk about eggs — our door is always open.</p>
+      <div class="contact-info">
+        <div class="contact-row">
+          <div class="contact-row-icon">📍</div>
+          <span class="contact-row-text">Nairobi, Kenya</span>
+        </div>
+        <div class="contact-row">
+          <div class="contact-row-icon">✉️</div>
+          <span class="contact-row-text">hello@nyumayenu.co.ke</span>
+        </div>
+        <div class="contact-row">
+          <div class="contact-row-icon">📱</div>
+          <span class="contact-row-text">+254 700 000 000</span>
+        </div>
+        <div class="contact-row">
+          <div class="contact-row-icon">🌐</div>
+          <span class="contact-row-text">@nyumayenu</span>
+        </div>
+      </div>
+    </div>
+    <form class="contact-form fade-up" style="transition-delay:0.15s" onsubmit="event.preventDefault(); alert('Message sent! We\'ll be in touch soon. 🍳');">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" placeholder="Your name" required/>
+        </div>
+        <div class="form-group">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" placeholder="Family name" required/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="you@example.com" required/>
+      </div>
+      <div class="form-group">
+        <label for="interest">I'm interested in</label>
+        <select id="interest">
+          <option>Catering & Events</option>
+          <option>Travel Experience</option>
+          <option>Game Night</option>
+          <option>Graphic Design</option>
+          <option>Collaboration / Partnership</option>
+          <option>Just saying hi 👋</option>
+          <option>Talking about eggs 🍳</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Tell us what's on your mind..." required></textarea>
+      </div>
+      <button type="submit" class="btn-primary" style="width:100%;padding:1rem;font-size:0.85rem;">Send Message →</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Nyuma Yenu</div>
+      <div class="footer-tagline">Life, Lived Fully · Nairobi, Kenya</div>
+    </div>
+    <ul class="footer-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#pillars">What We Do</a></li>
+      <li><a href="#ventures">Ventures</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Nyuma Yenu. Made with joy, eggs & good intentions. 🍳</div>
+  </div>
+</footer>
+
+<script>
+  // 1. Scroll Animations (Intersection Observer)
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // 2. Nav scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 60) {
+      nav.style.boxShadow = '0 4px 24px rgba(0,0,0,0.08)';
+    } else {
+      nav.style.boxShadow = 'none';
+    }
+  });
+
+  // 3. Mobile Navigation Toggle Logic
+  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+  const navLinks = document.querySelector('.nav-links');
+  const navItems = document.querySelectorAll('.nav-links a');
+
+  mobileMenuBtn.addEventListener('click', () => {
+    mobileMenuBtn.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    
+    // Accessibility toggle
+    const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+    mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+  });
+
+  // Close mobile menu when a link is clicked
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      mobileMenuBtn.classList.remove('active');
+      navLinks.classList.remove('active');
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+</body>
+</html>
